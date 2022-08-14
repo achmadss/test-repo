@@ -12,5 +12,5 @@ services:
       - /usr/src/app/node_modules
     ports:
       - 8080:3000
-    restart: unless-stopped
+    restart: always
     container_name: test-app
