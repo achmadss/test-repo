@@ -1,7 +1,7 @@
 const express = require("express")
+const userRepository = require("../repositories/UserRepository")
 
 const Routes = express.Router()
-const userRepository = require("../repositories/UserRepository.js")
 
 // default route
 Routes.get('/', (req, res) => {

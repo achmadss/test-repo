@@ -1,21 +1,21 @@
-import { DataTypes } from "sequelize/types";
-import { db } from "../config/database.js";
+const Sequelize = require("sequelize")
+const db = require("../config/database")
 
 const User = db.define('users', {
     // define attr
     id : {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true,
     },
     name : {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
     },
     email : {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
     },
     password : {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
     }
 }, {
     tableName: 'users',
