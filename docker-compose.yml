@@ -20,7 +20,7 @@ services:
     networks:
       - backend
     environment:
-      - MYSQL_ROOT_PASSWORD=270598
+      - MYSQL_ROOT_PASSWORD=password
     ports:
       - 3306:3306
     restart: unless-stopped
