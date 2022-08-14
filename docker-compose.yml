@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  api:
+    build:
+      context: .
+    # networks:
+    #   - frontend
+    #   - backend
+    depends_on:
+      - mysql
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 8080:3000
+    restart: unless-stopped
+    container_name: test-app
