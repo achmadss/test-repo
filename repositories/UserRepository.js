@@ -1,5 +1,5 @@
-import { BaseResponse } from "../models/responses/BaseResponse";
-import { User } from "../models/User";
+import { BaseResponse } from "../models/responses/BaseResponse.js";
+import { User } from "../models/User.js";
 
 exports.create = async (req, res) => {
     try {

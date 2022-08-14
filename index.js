@@ -1,4 +1,4 @@
-import { Routes } from "./routes/routes";
+import { Routes } from "./routes/routes.js";
 
 const express = require('express')
 const cors = require('cors')
