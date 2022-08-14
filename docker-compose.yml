@@ -7,8 +7,6 @@ services:
     # networks:
     #   - frontend
     #   - backend
-    depends_on:
-      - mysql
     volumes:
       - ./:/usr/src/app
       - /usr/src/app/node_modules
