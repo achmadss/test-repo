@@ -1,12 +1,10 @@
 const express = require('express')
-const cors = require('cors')
 const Routes = require('./routes/routes')
 const db = require("./config/database")
 
 const app = express()
 const port = 3000
 
-app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(Routes)
