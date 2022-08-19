@@ -1,4 +1,4 @@
-const { Sequelize } = require("sequelize")
+import Sequelize from "sequelize"
 
 const db = new Sequelize(
     'test_db',
