@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-repo
+  labels:
+    version: 1.0.0
+    environment: development
+
+spec:
+  containers:
+    - 
+      name: test-repo
+      image: novan921/test-repo-api
+      ports:
+        - containerPort: 3000
