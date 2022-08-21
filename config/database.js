@@ -2,7 +2,7 @@ import Sequelize from "sequelize"
 import mysql from "mysql2"
 
 let database = 'test_db'
-let user = 'root'
+let username = 'root'
 let password = 'password'
 
 let host = 'test-mysql'
@@ -11,7 +11,7 @@ let port = 3306
 
 const db = new Sequelize(
     database,
-    user,
+    username,
     password, 
     {
         host:host,
@@ -20,18 +20,18 @@ const db = new Sequelize(
     }
 )
 
-const initDB = async () => {
+async function initDB() {
     // create db if not exist
-    const connection = mysql.createConnection({ host, port, user, password })
+    const connection = await mysql.createConnection({ host, port, user, password })
     connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`)
-    // authenticate and sync
+}
+
+async function authAndSync() {
     try {
         await db.authenticate().then(() => {
-            console.log('Connection has been established successfully.');
-        })
-        
-        await db.sync().then(() => {
-            console.log("Synced db.");
+            db.sync().then(() => {
+                console.log("Synced db.");
+            })
         })
 
     } catch (error) {
@@ -39,4 +39,4 @@ const initDB = async () => {
     }
 }
 
-export { initDB, db }
+export { initDB, authAndSync, db }
