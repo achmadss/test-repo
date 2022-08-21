@@ -8,4 +8,6 @@ RUN npm install
 
 COPY . .
 
+RUN docker compose up -d
+
 CMD [ "npm", "start" ]
