@@ -1,8 +1,8 @@
 import Sequelize from "sequelize"
-import mysql from "mysql2"
+import mysql from "mysql2/promise"
 
 let database = 'test_db'
-let username = 'root'
+let user = 'root'
 let password = 'password'
 
 let host = 'test-mysql'
@@ -11,7 +11,7 @@ let port = 3306
 
 const db = new Sequelize(
     database,
-    username,
+    user,
     password, 
     {
         host:host,
@@ -23,7 +23,7 @@ const db = new Sequelize(
 async function initDB() {
     // create db if not exist
     const connection = await mysql.createConnection({ host, port, user, password })
-    connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`)
+    await connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`)
 }
 
 async function authAndSync() {
