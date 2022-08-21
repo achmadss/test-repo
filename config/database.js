@@ -41,4 +41,4 @@ const initDB = async () => {
 
 
 
-export { initDB }
+export { initDB, db }
