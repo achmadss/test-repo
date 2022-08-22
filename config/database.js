@@ -5,7 +5,7 @@ let database = 'test_db'
 let user = 'root'
 let password = 'password'
 
-let host = 'mysql'
+let host = 'test-mysql'
 let dialect = 'mysql'
 let port = 3306
 
@@ -28,7 +28,7 @@ async function initDB() {
                 host: host,
                 user: user,
                 password: password,
-                port: port,
+                database: database
             }
         )
         await connection.connect((err) => {
