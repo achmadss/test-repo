@@ -10,7 +10,7 @@ let dialect = 'mysql'
 let port = 3306
 
 const db = new Sequelize(
-    database,
+    "",
     user,
     password, 
     {
@@ -21,22 +21,16 @@ const db = new Sequelize(
 )
 
 async function initDB() {
-    // create db if not exist
-    const connection = await mysql.createConnection({ host, port, user, password })
-    await connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`)
-}
-
-async function authAndSync() {
     try {
-        await db.authenticate().then(() => {
-            db.sync().then(() => {
-                console.log("Synced db.");
-            })
+        await db.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`)
+        await db.authenticate()
+        await db.sync().then(() => {
+            console.log("Synced db.");
         })
-
     } catch (error) {
         console.error('Unable to connect to the database:', error);
     }
+    
 }
 
-export { initDB, authAndSync, db }
+export { initDB, db }
