@@ -5,7 +5,7 @@ let database = 'test_db'
 let user = 'root'
 let password = 'password'
 
-let host = 'test-mysql'
+let host = 'mysql'
 let dialect = 'mysql'
 let port = 3306
 
