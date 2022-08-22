@@ -52,4 +52,4 @@ async function initDB() {
     
 }
 
-export { initDB, db }
+export { initDB }
