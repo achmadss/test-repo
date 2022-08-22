@@ -12,10 +12,15 @@ spec:
   selector:
     matchLabels:
       app: test-api
-  containers:
-    - 
-      name: test-api
-      image: novan921/test-repo-api
-      imagePullPolicy: Always
-      ports:
-        - containerPort: 3000
+  template:
+    metadata:
+      labels:
+        app: test-api
+    spec:
+      containers:
+        - 
+          name: test-api
+          image: novan921/test-repo-api
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
