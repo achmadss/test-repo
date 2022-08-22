@@ -35,6 +35,8 @@ async function initDB() {
             if (err) {
                 throw Error(err)
             }
+        }).then(() => {
+            console.log("connected to db")
         })
     } catch (error) {
         console.log(error)
