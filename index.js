@@ -1,5 +1,5 @@
 import express from "express"
-// import { Routes } from "./routes/routes.js"
+import { Routes } from "./routes/routes.js"
 import { initDB } from "./config/database.js"
 
 const app = express()
@@ -7,13 +7,9 @@ const port = 3000
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-// app.use(Routes)
+app.use(Routes)
 
 initDB()
-
-app.get('/', (req, res) => {
-  res.send('Hello World!!!!')
-})
 
 app.listen(port, () => {
   console.log(`Test app listening on port ${port}`)
