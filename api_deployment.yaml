@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: test-repo-api
-        image: novan921/test-repo-api:v0.0.2
+        image: novan921/test-repo-api:v0.0.4
         ports:
           - containerPort: 3000
 ---
@@ -27,7 +27,7 @@ metadata:
   labels:
     app: api-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - name: http
     port: 80
