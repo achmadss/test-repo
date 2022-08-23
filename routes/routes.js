@@ -12,7 +12,7 @@ const Routes = express.Router()
 
 // default route
 Routes.get('/', (req, res) => {
-    res.send('Hello World')
+    res.send('Hello World!!')
 })
 
 // route get all users
